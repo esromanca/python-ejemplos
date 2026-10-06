@@ -1,0 +1,5 @@
+j = 1
+i = 1
+while j < 100:
+    j = j + 1 
+    print(i)

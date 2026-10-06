@@ -1,0 +1,57 @@
+# Importamos el módulo OS que nos permite usar los comandos del Sistema Operativo 
+import os
+import time
+import datetime
+# Pedimos los dos números decimales por pantalla
+
+# Abrimos un while infinito 
+while True:
+  # Borramos la pantalla
+  os.system('clear')
+  # Pedimos la operación a realizar entre +-*/s
+  operacion = input("\nintroduce la operación que quieres realizar: \nsuma (+)\nresta (-)\nmultiplicación (*)\ndivisión (/)\nsalir(s)\n: ")
+  # Si la operación es salir nos despedimos y hacemos el break. 
+  if operacion == "s":
+    print("Hasta pronto")
+    # Deberíamos cerrar los ficheros si los hemos abierto antes.
+    break
+
+  # Si la operación es una aritmética pedimos los dos valores de los números. 
+  if operacion in ["+", "-" , "*" ,"/"]:
+    try:
+       numero1 = float(input("introduce el numero 1: "))
+       numero2 = float(input("introduce el numero 2: "))  
+    except:
+       print("Por favor, ingresa números validos")
+       time.sleep(2)
+       continue
+  # Comenzamos a realizar las operaciones 
+  salida = open("salida.txt","a")
+  errores = open("errores.txt","a")
+  if operacion == "+":  
+    os.system('clear')
+    print(f"\nEl resultado de sumar {numero1} + {numero2} es: {numero1+numero2:.2f}\n\n")
+    salida.write(f"{datetime.now()}El resultado de sumar {numero1} + {numero2} es: {numero1+numero2:.2f}\n")
+    time.sleep(2)
+  elif operacion == "-":
+    os.system('clear')
+    print(f"\nEl resultado de restar {numero1} - {numero2} es: {numero1 - numero2:.2f}\n\n")
+    salida.write(f"El resultado de restar {numero1} - {numero2} es: {numero1 - numero2:.2f}\n")
+    time.sleep(2)
+  elif operacion == "*":
+    os.system('clear')
+    print (f"\nEl resultado de multiplicar {numero1} x {numero2} es: {numero1 * numero2:.2f}\n\n")
+    time.sleep(2)
+  elif operacion == "/":
+    os.system('clear')
+    try:
+        print(f"\nEl resultado de dividir {numero1} / {numero2} es: {numero1/numero2:.2f}\n\n")
+    except:
+        print("No se puede dividir por cero\n")
+        errores.write(f"No se puede dividir por cero: numero1={numero1} y numero2={numero2}\n")
+    finally:
+        time.sleep(2)
+  else:
+    print(f"Opción erronea: {operacion}\n")
+    errores.write(f"Introducida una opción erronea: {operacion}\n")
+    time.sleep(2)

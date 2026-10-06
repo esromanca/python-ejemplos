@@ -1,0 +1,6 @@
+import csv
+with open('datos.csv', newline='') as f:
+    lector = csv.reader(f delimiter=',' quotechar='"' escapechar='\\')
+    for fila in lector:
+        print(fila[1])
+f.close()

@@ -1,0 +1,4 @@
+la suma es 124.788745
+imeros númers es: 124.79
+La suma de los tres primeros númers es: 18.20
+La suma de los tres primeros númers es: 544863.50

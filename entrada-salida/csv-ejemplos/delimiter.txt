@@ -1,0 +1,4 @@
+nombre,comentario
+Ana,Hola\, me llamo Ana
+Luis,Me gusta el signo \, de separación
+Esteban,"todo esto será una línea, aunque haya comas"

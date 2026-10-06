@@ -1,0 +1,28 @@
+# Importamos el módulo OS que nos permite usar los comandos del Sistema Operativo 
+import os
+# Pedimos los dos números decimales por pantalla
+os.system('clear')
+numero1 = input("introduce el numero 1: ")
+numero2 = input("introduce el numero 2: ")
+
+# Pedimos la operación a realizar
+operador = input("\nintroduce la operación que quieres realizar: \nsuma (+)\nresta (-)\nmultiplicación (*)\ndivisión (/)\n: ")
+# Realizamos la operación solicitada
+if operador == "+":
+    resultado = numero1 + numero2
+elif operador == "-":
+    resultado = numero1 - numero2
+elif operador == "*":
+    resultado = numero1 * numero2
+elif operador == "/":
+    if numero2 != 0:
+        resultado = numero1 / numero2
+    else:
+        print("\nNo se puede dividir por cero")
+        resultado="no se puede dividir por cero"
+	#exit()
+else:
+    print("Opción erronea")
+    exit()
+
+print ("\nEl resultado es: ", resultado,"\n\n")

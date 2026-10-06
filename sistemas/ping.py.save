@@ -1,0 +1,20 @@
+import os
+
+# Creamos una lista de direcciones
+hosts = ["8.8.8.8", "google.com", "ldjslfkd"]
+
+# Recorremos la lista haciendo el ping
+for host in hosts:
+    # Definimos el comando enviado la respuesta del comando al /dev/null
+    # Tambien enviamos los posibles errores al mismo "agujero".
+    # Un error se puede producir por no haber red, no tener DNS o IP mal consttruida. 
+    comando = f"ping -W 2 -c 1 {host} > /dev/null 2>&1"
+    respuesta = os.system(comando)
+    #respuesta = os.system(f"ping -c 1 {host} > /dev/null 2>&1")
+    #respuesta = os.system(f"ping -c 1 {host}") 
+    # La respuesta solo sera 0 si el equipo está activo y 1 si no está activo o ha habido un error
+    if respuesta == 0:
+        print(host, "ACTIVO")
+    else:
+        print(host, "NO responde")
+        #print("La respuesta es: ",respuesta)	

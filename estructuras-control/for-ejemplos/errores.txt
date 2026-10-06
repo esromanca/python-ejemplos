@@ -1,0 +1,4 @@
+No se puede dividir por cero
+No se puede dividir por cero: numero1={numero1} y numero2={numero2}
+No se puede dividir por cero: numero1={numero1} y numero2={numero2}
+Opción ErroneaOpción ErroneaOpción ErroneaIntroducida una opción erronea: tIntroducida una opción erronea: tIntroducida una opción erronea: /5No se puede dividir por cero: numero1=5.0 y numero2=0.0
