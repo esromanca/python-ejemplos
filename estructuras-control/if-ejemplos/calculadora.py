@@ -1,6 +1,6 @@
 # Importamos el módulo OS que nos permite usar los comandos del Sistema Operativo 
 import os
-# Pedimos los dos números decimales por pantalla
+# Pedimos los dos números decimales por pantalla, pero antes borramos la pantalla. 
 os.system('clear')
 numero1 = input("introduce el numero 1: ")
 numero2 = input("introduce el numero 2: ")
