@@ -1,2 +1,0 @@
-El resultado de sumar 2.0 + 3.0 es: 5.00
-El resultado de restar 232313.0 - 1313.0 es: 231000.00
