@@ -1,16 +1,20 @@
-try:
+continuar = "si"
+while continuar == "si":
+ try:
   numero1 = float(input("Introduce el primer numero: "))
   numero2 = float(input("Introduce el segundo numero: "))
   resultado = numero1/numero2
   print("El resultado es: ", resultado)
-except ZeroDivisionError:
+ except ZeroDivisionError:
   print("****************************")
   print("No se puede dividir por cero")
   print("****************************")
-except ValueError:
+ except ValueError:
   print("********************************")
   print("Debes introducir numeros validos")
   print("********************************")
-except:
-  print("except")
-print("El programa continua normalmente")
+ except:
+  print("Error no controlado")
+ finally:
+  print("El programa continua normalmente")
+  continuar = input("Quieres continuar")

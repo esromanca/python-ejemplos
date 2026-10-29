@@ -1,7 +1,7 @@
 i = 1
 j = 1
 while j < 100:
-    print(j)
+    #print(j)
     i = i + 1
     print(i)
-    #j = j + 1 
+    j = j + 1 
