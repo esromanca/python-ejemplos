@@ -2,6 +2,7 @@
 import os
 # Pedimos los dos números decimales por pantalla, pero antes borramos la pantalla. 
 os.system('clear')
+
 numero1 = input("introduce el numero 1: ")
 numero2 = input("introduce el numero 2: ")
 
