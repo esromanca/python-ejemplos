@@ -1,18 +1,19 @@
 # Imortamos la librería csv para manejar archivos CSV
 import csv
+# Inicializamos las variables que vamos a usar para calcular la media
 total = 0
 contador = 0
-# Solicitamos al usuario el nombre del fichero de salida y las columnas a leer
+
+# Solicitamos al usuario el nombre del fichero de salida, el sexo y el trimestre
 nombre = input("Intruduce el nombre del fichero de salida): ")
 sexo = input("Introduce el sexo a filtrar (Hombres/Mujeres): ")  
-#columna1 = int(input("Introduce la columna1 a leer (1-5): "))
-#columna2 = int(input("Introduce la columna2 a leer (1-5): "))
 trimestre = input("Introduce el trimestre a filtrar (T1/T2/T3/T4): ")
-#edad = input("Introduce la edad a filtrar (0-100/Todos): ")
+
 # Abrimos el archivo CSV con la codificación adecuada: latin-1
 with open('paro.csv','r', encoding='latin-1') as archivo_csv:
     # Creamos un lector CSV especificando el delimitador y el carácter de cita
     lector_csv = csv.reader(archivo_csv, delimiter=';', quotechar='"')
+
     # Guardamos la primera linea como encabezado. 
     encabezado = next(lector_csv)
     # Abrimos el fichero de salida en modo append dentro del with anterior 
@@ -26,4 +27,5 @@ with open('paro.csv','r', encoding='latin-1') as archivo_csv:
            f.write(f"Sexo : {fila[2]} Trimestre: {fila[3]} Paro: {fila[4]} \n")
            total = total + float(fila[4].replace(",", "."))
            contador += 1 
+# Cuando se llega al final del archivo CSV se hace el cálculo de la media y se imprime
 print(f"Media del paro para sexo {sexo} en el trimestre {trimestre} es: {total/contador:.2f}%")
