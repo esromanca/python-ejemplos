@@ -1,5 +1,6 @@
 # Imortamos la librería csv para manejar archivos CSV
 import csv
+
 # Inicializamos las variables que vamos a usar para calcular la media
 total = 0
 contador = 0
